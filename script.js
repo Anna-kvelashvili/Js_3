@@ -65,10 +65,7 @@ for (let i = array.length - 1; i >= 0; i--) {
   console.log(array[i]);
 }
 //task6
-let userAgeFunction = (birthYear, yearNow) => {
-  let age = yearNow - birthYear;
-  let userAge = 25 > 18 ? "სრულწლოვანი" : "არასრულწოვანი";
-  return userAge;
-};
-let userAgeResult1 = userAgeFunction(2000, 2023);
-console.log(userAgeResult1);
+let firstUserAge = (age) => (age > 18 ? 'სრულწლოვანი' : 'არასრულწლოვანი')
+let userAge = 25 ;
+let result4 = firstUserAge(userAge)
+console.log(result4);
