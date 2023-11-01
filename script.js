@@ -1,6 +1,5 @@
 "use strict";
-
-// task_1
+//task1
 function sum(...numbers) {
   let sum = 0;
   for (let item of numbers) {
@@ -8,10 +7,9 @@ function sum(...numbers) {
   }
   return sum;
 }
-let result = sum(10, 50, 6, 7, 8, 11, 6, 3, 9);
-console.log(result);
-
-// task_2
+let sumResult = sum(10, 50, 6, 7, 8, 11, 6, 3, 9);
+console.log(sumResult);
+//task2
 let user = {
   firstname: "giorgi",
   lastname: "saakadze",
@@ -19,54 +17,58 @@ let user = {
   isloggedin: true,
 };
 
-function userStatus(object) {
-  if (object.isloggedin) {
-    return `${object.firstname} ${object.lastname}`;
+let user2 = {
+  firstname: "lasha",
+  lastname: "smith",
+  age: 25,
+  isloggedin: true,
+};
+
+function printName(obj) {
+  if (obj.isloggedin) {
+    return `${obj.firstname} ${obj.lastname}`;
   }
-  {
-    return "false";
-  }
+  return false;
 }
 
-let theResult1 = userStatus(user);
-console.log(theResult1);
+let printNameResult = printName(user);
+let printNameResult2 = printName(user2);
 
-// task_3
-function maxNumber(numbers2) {
+console.log(printNameResult2);
+
+//task3
+function getMax(...numb) {
   let maxValue = 0;
-  for (let element of numbers2) {
-    if (element > maxValue) {
-      maxValue = element;
+  for (let item of numb) {
+    if (item > maxValue) {
+      maxValue = item;
     }
   }
   return maxValue;
 }
-let result2 = maxNumber([2, 6, 10, 100, 9, -1, -15]);
-console.log(result2);
-
-// task_4
-function oddOrEven(x) {
-  if (x % 2 == 1) {
-    return "this number is odd";
+let getMaxValueResult = getMax(19, 50, 3, 10, 520);
+console.log(getMaxValueResult);
+//task4
+function testFnc(x) {
+  if (x % 2 == 0) {
+    return "even";
   }
-  return "this number is even";
+  return "odd";
 }
 
-console.log(oddOrEven(5));
-
-// task_5
+let testFncResult = testFnc(19);
+console.log(testFncResult);
+//task5
 let array = [1, 2, 3, 4, 5];
-let reversedArray = [];
 
 for (let i = array.length - 1; i >= 0; i--) {
-  reversedArray.push(array[i]);
+  console.log(array[i]);
 }
-
-console.log(reversedArray);
-
-// task_6
-let firstuserage = (age) => (age > 18 ? "სრულწლოვანი" : "არასრულწლოვანი");
-
-let userage = 23;
-let result3 = firstuserage(userage);
-console.log(result3);
+//task6
+let userAgeFunction = (birthYear, yearNow) => {
+  let age = yearNow - birthYear;
+  let userAge = 25 > 18 ? "სრულწლოვანი" : "არასრულწოვანი";
+  return userAge;
+};
+let userAgeResult1 = userAgeFunction(2000, 2023);
+console.log(userAgeResult1);
